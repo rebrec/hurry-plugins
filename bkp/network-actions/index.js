@@ -1,10 +1,9 @@
 import Plugin from '../../src/core/Plugin'
-import Test from './Test.jsx'
-
+import contextMenu from './menu'
 
 export default class TestPlugin extends Plugin{
     constructor(api, context ){
-        super(api); 
-        api.store.uiState.addView('Test', Test(api)); 
+        super(api, context); 
+        api.store.registerContextMenu(contextMenu);
     }
 } 
